@@ -1,7 +1,7 @@
 import React from "react";
 import { ArrowCircleDownIcon, ArrowRightIcon } from "@heroicons/react/solid";
 import { Button } from "../components/Button";
-import { GitHub, Instagram, Twitter } from "../icons";
+import { GitHub, Instagram, LinkedIn, Twitter } from "../icons";
 
 export function Home() {
   return (
@@ -38,6 +38,9 @@ export function Home() {
                 </a>
                 <a href="https://instagram.com/hellodhlyn" target="_blank" rel="noreferrer">
                   <Instagram className="h-6 w-6 hover:opacity-50 inline" />
+                </a>
+                <a href="https://www.linkedin.com/in/hellodhlyn/" target="_blank" rel="noreferrer">
+                  <LinkedIn className="h-6 w-6 hover:opacity-50 inline" />
                 </a>
               </div>
 
@@ -98,15 +101,10 @@ export function Home() {
           </div>
         </div>
 
-        <div className="w-full py-12 md:py-24 bg-gray-900">
-          <div className="container mx-auto px-6">
-            <p className="py-4 text-4xl font-black">Projects</p>
-          </div>
-        </div>
-
-        <div className="w-full py-12 md:py-24 bg-gray-100 text-gray-700">
-          <div className="container mx-auto px-6">
-            <p className="py-4 text-4xl font-black text-gray-900">Contact</p>
+        <div className="w-full py-12 px-4 md:px-8 border-t bg-gray-900 text-gray-000">
+          <div className="text-xs text-center">
+            <img className="h-16 w-16 mx-auto" src="/logo-white.png" alt="LYnLab 로고" />
+            <p className="py-2">© 2011 - {new Date().getFullYear()} Hoerin Doh, All rights reserved.</p>
           </div>
         </div>
       </div>
