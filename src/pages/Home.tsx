@@ -1,6 +1,7 @@
 import React from "react";
 import { ArrowCircleDownIcon, ArrowRightIcon } from "@heroicons/react/solid";
 import { Button } from "../components/Button";
+import { ContactEmailGenerator } from "../components/ContactEmailGenerator";
 import { GitHub, Instagram, LinkedIn, Twitter } from "../icons";
 
 export function Home() {
@@ -101,7 +102,17 @@ export function Home() {
           </div>
         </div>
 
-        <div className="w-full py-12 px-4 md:px-8 border-t bg-gray-900 text-gray-000">
+        <div className="w-full py-12 md:py-24 bg-gray-900 text-gray-000">
+          <div className="container mx-auto px-6">
+            <p className="py-4 text-4xl font-black text-white">Contact</p>
+            <p>자세한 이력서를 원하시거나 그 밖에 연락이 필요하시면 아래 주소로 이메일을 보내주세요.</p>
+            <div className="py-4">
+              <ContactEmailGenerator />
+            </div>
+          </div>
+        </div>
+
+        <div className="w-full py-12 px-4 md:px-8 bg-gray-900 text-gray-000">
           <div className="text-xs text-center">
             <img className="h-16 w-16 mx-auto" src="/logo-white.png" alt="LYnLab 로고" />
             <p className="py-2">© 2011 - {new Date().getFullYear()} Hoerin Doh, All rights reserved.</p>
