@@ -8,7 +8,7 @@ interface ButtonProps {
 export function Button({ children, onClick }: ButtonProps) {
   return (
     <span
-      className="p-2 bg-gray-000 text-gray-900 hover:opacity-50 transition cursor-pointer"
+      className="px-4 py-2 bg-gray-000 text-gray-900 hover:opacity-50 transition cursor-pointer rounded-full"
       onClick={onClick}
     >
       {children}

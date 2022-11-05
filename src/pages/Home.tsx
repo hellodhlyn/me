@@ -2,7 +2,7 @@ import React from "react";
 import { ArrowCircleDownIcon, ArrowRightIcon } from "@heroicons/react/solid";
 import { Button } from "../components/Button";
 import { ContactEmailGenerator } from "../components/ContactEmailGenerator";
-import { GitHub, Instagram, LinkedIn, Twitter } from "../icons";
+import { GitHub, Instagram, Mastodon } from "../icons";
 
 export function Home() {
   return (
@@ -34,14 +34,11 @@ export function Home() {
                 <a href="https://github.com/hellodhlyn" target="_blank" rel="noreferrer">
                   <GitHub className="h-6 w-6 hover:opacity-50 inline" />
                 </a>
-                <a href="https://twitter.com/hellodhlyn" target="_blank" rel="noreferrer">
-                  <Twitter className="h-6 w-6 hover:opacity-50 inline" />
-                </a>
                 <a href="https://instagram.com/hellodhlyn" target="_blank" rel="noreferrer">
                   <Instagram className="h-6 w-6 hover:opacity-50 inline" />
                 </a>
-                <a href="https://www.linkedin.com/in/hellodhlyn/" target="_blank" rel="noreferrer">
-                  <LinkedIn className="h-6 w-6 hover:opacity-50 inline" />
+                <a href="https://twingyeo.kr/@hellodhlyn" target="_blank" rel="me">
+                  <Mastodon className="h-6 w-6 hover:opacity-50 inline" />
                 </a>
               </div>
 
