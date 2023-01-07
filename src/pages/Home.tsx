@@ -37,7 +37,7 @@ export function Home() {
                 <a href="https://instagram.com/hellodhlyn" target="_blank" rel="noreferrer">
                   <Instagram className="h-6 w-6 hover:opacity-50 inline" />
                 </a>
-                <a href="https://twingyeo.kr/@hellodhlyn" target="_blank" rel="me">
+                <a href="https://dodam.io/@hellodhlyn" target="_blank" rel="me">
                   <Mastodon className="h-6 w-6 hover:opacity-50 inline" />
                 </a>
               </div>
