@@ -1,7 +1,6 @@
 import { useState } from "react";
 import dayjs from "dayjs";
 import calendar from "dayjs/plugin/calendar";
-import { ClipboardCopyIcon, CheckIcon } from "@heroicons/react/outline";
 import { Button } from "./Button";
 
 dayjs.extend(calendar);
@@ -35,23 +34,16 @@ const generateContactEmail = async (): Promise<GeneratedEmail> => {
   return generatedEmail;
 };
 
-function copyAddress(address: string) {
-}
-
 function CopyButton({ address }: { address: string }) {
   const [copied, setCopied] = useState<boolean>(false);
   return (
     <Button
       onClick={(e) => {
         e.preventDefault();
-        copyAddress(address);
         navigator.clipboard.writeText(address).then(() => { setCopied(true); });
       }}
     >
-      {copied ?
-        (<><CheckIcon className="h-4 w-4 inline" /> 복사됨</>) :
-        (<><ClipboardCopyIcon className="h-4 w-4 inline"/> 복사</>)
-      }
+      {copied ? "복사됨" : "복사하기"}
     </Button>
   );
 }
