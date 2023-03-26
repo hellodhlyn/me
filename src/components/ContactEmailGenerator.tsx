@@ -1,9 +1,13 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import dayjs from "dayjs";
 import calendar from "dayjs/plugin/calendar";
 import { Button } from "./Button";
 
 dayjs.extend(calendar);
+
+const ERR_TOO_MANY_REQUESTS = "too-many-request";
+const ERR_UNKNOWN = "unknown";
 
 type GeneratedEmail = {
   address: string;
@@ -19,9 +23,9 @@ const generateContactEmail = async (): Promise<GeneratedEmail> => {
 
   const res = await fetch("https://email-route-generator.lyn.workers.dev/generate", { method: "POST" });
   if (res.status === 429) {
-    throw new Error("이메일 주소 발급 요청이 너무 많아 생성에 실패했습니다. 잠시 후 다시 시도해주세요.");
+    throw new Error(ERR_TOO_MANY_REQUESTS);
   } else if (res.status >= 300) {
-    throw new Error("이메일 주소 발급에 실패했습니다. 잠시 후 다시 시도해주세요.");
+    throw new Error(ERR_UNKNOWN);
   }
 
   const body = await res.json() as { address: string, expireAt: number };
@@ -35,6 +39,7 @@ const generateContactEmail = async (): Promise<GeneratedEmail> => {
 };
 
 function CopyButton({ address }: { address: string }) {
+  const { t } = useTranslation();
   const [copied, setCopied] = useState<boolean>(false);
   return (
     <Button
@@ -43,12 +48,13 @@ function CopyButton({ address }: { address: string }) {
         navigator.clipboard.writeText(address).then(() => { setCopied(true); });
       }}
     >
-      {copied ? "복사됨" : "복사하기"}
+      {copied ? t("home/contact/button/copied") : t("home/contact/button/copy")}
     </Button>
   );
 }
 
 export function ContactEmailGenerator() {
+  const { t } = useTranslation();
   const [address, setAddress] = useState<string>();
   const [message, setMessage] = useState<string>();
 
@@ -64,11 +70,11 @@ export function ContactEmailGenerator() {
             .then((generated) => {
               const diffHours = dayjs(generated.expireAt).diff(dayjs(), "hours");
               setAddress(generated.address);
-              setMessage(`위 이메일 주소는 ${diffHours}시간 동안 유효합니다.`);
+              setMessage(t("home/contact/mail-address-valid-until", { hours: diffHours })!);
             })
-            .catch((e) => { setMessage(e.message); });
+            .catch((e) => { setMessage(t(`home/contact/error/${e.message}`)!); });
         }}>
-          이메일 주소 확인
+          {t("home/contact/show-mail-address")}
         </Button>
       }
 

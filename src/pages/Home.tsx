@@ -1,10 +1,20 @@
-import React from "react";
+import { useTranslation } from "react-i18next";
 import { ArrowDownCircleIcon } from "@heroicons/react/24/solid"
+import { SiGithub, SiInstagram, SiLinkedin, SiTwitter } from "@icons-pack/react-simple-icons";
 import { Button } from "../components/Button";
 import { ContactEmailGenerator } from "../components/ContactEmailGenerator";
-import { SiGithub, SiInstagram, SiLinkedin, SiTwitter } from "@icons-pack/react-simple-icons";
+import { LanguageSelector } from "../components/LanguageSelector";
+
+const currentLanguageKey = "lang";
 
 export function Home() {
+  const { t, i18n } = useTranslation();
+
+  const currentLanguage = localStorage.getItem(currentLanguageKey) || "ko";
+  if (i18n.language !== currentLanguage) {
+    i18n.changeLanguage(currentLanguage);
+  }
+
   return (
     <div className="h-screen w-full bg-black">
       <div className="absolute h-screen w-full bg-fixed"
@@ -19,9 +29,8 @@ export function Home() {
         <div className="h-screen w-full flex flex-col bg-black bg-opacity-50">
           <div className="flex flex-grow items-center">
             <div className="container mx-auto px-6">
-              <p className="mt-20 py-4 text-5xl md:text-7xl font-black">
-                Hoerin Doh<span className="font-normal text-xl md:text-3xl"> [도회린]</span>
-              </p>
+              <p className="mt-20 text-5xl md:text-7xl font-black">Hoerin Doh</p>
+              <p className="py-4 font-normal text-xl md:text-3xl">[도회린 / ド・ホェリン]</p>
               <p>
                 Backend Developer at&nbsp;
                 <a href="https://dunamu.com" target="_blank" rel="noreferrer">
@@ -45,10 +54,10 @@ export function Home() {
                 </a>
               </div>
 
-              <div className="py-8">
+              <div className="py-8 flex items-center text-base">
                 <a href="https://lynlab.co.kr/blog">
                   <Button>
-                    블로그 →
+                    {t("home/button/blog")} →
                   </Button>
                 </a>
               </div>
@@ -57,7 +66,7 @@ export function Home() {
 
           <div className="container mx-auto pb-8 text-center">
             <ArrowDownCircleIcon className="h-8 w-8 m-auto animate-bounce" />
-            <p>프로필 보기</p>
+            <p>{t("home/action/see-profile")}</p>
           </div>
         </div>
 
@@ -105,7 +114,7 @@ export function Home() {
         <div className="w-full py-12 md:py-24 bg-gray-900 text-gray-000">
           <div className="container mx-auto px-6">
             <p className="py-4 text-4xl font-black text-white">Contact</p>
-            <p>자세한 이력서를 원하시거나 그 밖에 연락이 필요하시면 아래 주소로 이메일을 보내주세요.</p>
+            <p>{t("home/contact/description")}</p>
             <div className="py-4">
               <ContactEmailGenerator />
             </div>
@@ -118,6 +127,16 @@ export function Home() {
             <p className="py-2">© 2011 - {new Date().getFullYear()} Hoerin Doh, All rights reserved.</p>
           </div>
         </div>
+      </div>
+
+      <div className="absolute p-4 md:p-8 right-0">
+        <LanguageSelector
+          initialLanguage={currentLanguage}
+          onSelect={(lang) => {
+            i18n.changeLanguage(lang);
+            localStorage.setItem(currentLanguageKey, lang);
+          }}
+        />
       </div>
     </div>
   );

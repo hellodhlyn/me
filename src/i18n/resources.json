@@ -1,0 +1,41 @@
+{
+  "ko": {
+    "translation": {
+      "home/button/blog": "블로그",
+      "home/action/see-profile": "프로필 보기",
+      "home/contact/description": "자세한 이력서를 원하시거나 그 밖에 연락이 필요하시면 아래 주소로 이메일을 보내주세요.",
+      "home/contact/show-mail-address": "이메일 주소 확인",
+      "home/contact/mail-address-valid-until": "위 이메일 주소는 {{hours}}시간 동안 유효합니다.",
+      "home/contact/button/copy": "복사",
+      "home/contact/button/copied": "복사됨",
+      "home/contact/error/too-many-request": "이메일 주소 발급 요청이 너무 많아 생성에 실패했습니다. 잠시 후 다시 시도해주세요.",
+      "home/contact/error/unknown": "이메일 주소 발급 요청에 실패했습니다. 잠시 후 다시 시도해주세요."
+    }
+  },
+  "en": {
+    "translation": {
+      "home/button/blog": "Blog (Korean)",
+      "home/action/see-profile": "See Profile",
+      "home/contact/description": "If you want to see my resume or need to contact me, please send an email to the address below.",
+      "home/contact/show-mail-address": "Show email address",
+      "home/contact/mail-address-valid-until": "The address is valid in {{hours}} hours.",
+      "home/contact/button/copy": "Copy",
+      "home/contact/button/copied": "Copied",
+      "home/contact/error/too-many-request": "There are too many requests on the server. Please try again later.",
+      "home/contact/error/unknown": "Unexpected error occurred. Please try again later."
+    }
+  },
+  "ja": {
+    "translation": {
+      "home/button/blog": "ブログ（韓国語）",
+      "home/action/see-profile": "プロフィール詳細",
+      "home/contact/description": "詳細な履歴書や連絡先が必要な場合、下記のメールアドレスまでご連絡下さい。",
+      "home/contact/show-mail-address": "メールアドレスを確認",
+      "home/contact/mail-address-valid-until": "上記アドレスは{{hours}}時間有効です。",
+      "home/contact/button/copy": "コピー",
+      "home/contact/button/copied": "コピーしました",
+      "home/contact/error/too-many-request": "サーバが混雑しているため、処理に失敗しました。もう一度試してください。",
+      "home/contact/error/unknown": "エラーが発生しました。もう一度試してください。"
+    }
+  }
+}
