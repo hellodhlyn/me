@@ -1,5 +1,5 @@
 import React from "react";
-import { ArrowCircleDownIcon, ArrowRightIcon } from "@heroicons/react/solid";
+import { ArrowRightIcon, ArrowDownCircleIcon } from "@heroicons/react/24/solid"
 import { Button } from "../components/Button";
 import { ContactEmailGenerator } from "../components/ContactEmailGenerator";
 import { GitHub, Instagram, Mastodon } from "../icons";
@@ -37,7 +37,7 @@ export function Home() {
                 <a href="https://instagram.com/hellodhlyn" target="_blank" rel="noreferrer">
                   <Instagram className="h-6 w-6 hover:opacity-50 inline" />
                 </a>
-                <a href="https://dodam.io/@hellodhlyn" target="_blank" rel="me">
+                <a href="https://dodam.io/@hellodhlyn" target="_blank" rel="noreferrer">
                   <Mastodon className="h-6 w-6 hover:opacity-50 inline" />
                 </a>
               </div>
@@ -53,7 +53,7 @@ export function Home() {
           </div>
 
           <div className="container mx-auto pb-8 text-center">
-            <ArrowCircleDownIcon className="h-8 w-8 m-auto animate-bounce" />
+            <ArrowDownCircleIcon className="h-8 w-8 m-auto animate-bounce" />
             <p>프로필 보기</p>
           </div>
         </div>
