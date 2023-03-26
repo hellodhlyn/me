@@ -1,8 +1,8 @@
 import React from "react";
-import { ArrowRightIcon, ArrowDownCircleIcon } from "@heroicons/react/24/solid"
+import { ArrowDownCircleIcon } from "@heroicons/react/24/solid"
 import { Button } from "../components/Button";
 import { ContactEmailGenerator } from "../components/ContactEmailGenerator";
-import { GitHub, Instagram, Mastodon } from "../icons";
+import { SiGithub, SiInstagram, SiLinkedin, SiTwitter } from "@icons-pack/react-simple-icons";
 
 export function Home() {
   return (
@@ -32,20 +32,23 @@ export function Home() {
 
               <div className="py-4 text-xl space-x-3 fill-gray-000">
                 <a href="https://github.com/hellodhlyn" target="_blank" rel="noreferrer">
-                  <GitHub className="h-6 w-6 hover:opacity-50 inline" />
+                  <SiGithub className="h-6 w-6 hover:opacity-50 inline transition-opacity" />
+                </a>
+                <a href="http://www.linkedin.com/in/hellodhlyn" target="_blank" rel="noreferrer">
+                  <SiLinkedin className="h-6 w-6 hover:opacity-50 inline transition-opacity" />
                 </a>
                 <a href="https://instagram.com/hellodhlyn" target="_blank" rel="noreferrer">
-                  <Instagram className="h-6 w-6 hover:opacity-50 inline" />
+                  <SiInstagram className="h-6 w-6 hover:opacity-50 inline transition-opacity" />
                 </a>
-                <a href="https://dodam.io/@hellodhlyn" target="_blank" rel="noreferrer">
-                  <Mastodon className="h-6 w-6 hover:opacity-50 inline" />
+                <a href="https://twitter.com/hellodhlyn" target="_blank" rel="noreferrer">
+                  <SiTwitter className="h-6 w-6 hover:opacity-50 inline transition-opacity" />
                 </a>
               </div>
 
               <div className="py-8">
                 <a href="https://lynlab.co.kr/blog">
                   <Button>
-                    블로그 <ArrowRightIcon className="h-4 w-4 inline" />
+                    블로그 →
                   </Button>
                 </a>
               </div>
