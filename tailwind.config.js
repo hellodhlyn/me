@@ -6,11 +6,14 @@ module.exports = {
   theme: {
     fontFamily: {
       sans: [
-        'SUIT', '-apple-system', 'BlinkMacSystemFont', 'system-ui', 'Roboto', '"Helvetica Neue"',
+        '"Pretendard JP"', '-apple-system', 'BlinkMacSystemFont', 'system-ui', 'Roboto', '"Helvetica Neue"',
         '"Segoe UI"', '"Apple SD Gothic Neo"', '"Noto Sans KR"', '"Malgun Gothic"', 'sans-serif',
       ],
     },
     extend: {
+      height: {
+        screen: ['100vh', '100svh'],
+      },
       colors: {
         // Source: https://yeun.github.io/open-color/
         gray: {
@@ -137,4 +140,7 @@ module.exports = {
     },
   },
   variants: {},
+  plugins: [
+    require("@tailwindcss/typography"),
+  ],
 };

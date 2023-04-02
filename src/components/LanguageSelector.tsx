@@ -20,15 +20,15 @@ export function LanguageSelector({ initialLanguage, onSelect }: LanguageSelector
 
   useEffect(() => {
     onSelect(currentLanguage.id);
-  });
+  }, [currentLanguage, onSelect]);
 
   return (
     <Listbox value={currentLanguage} onChange={setCurrentLanguage}>
-      <Listbox.Button className="flex items-center px-4 py-2 text-base bg-gray-000 rounded-md hover:opacity-50 transition cursor-pointerd">
+      <Listbox.Button className="flex items-center px-4 py-2 text-base bg-gray-000 text-gray-800 border border-gray-300 rounded-md hover:opacity-50 transition cursor-pointer shadow-lg">
         <LanguageIcon className="h-4 w-4 mr-1" />
         <span>{currentLanguage.name}</span>
       </Listbox.Button>
-      <Listbox.Options className="absolute mt-2 w-24 py-1 bg-gray-000 text-gray-800 rounded-md">
+      <Listbox.Options className="absolute mt-2 w-24 py-1 bg-gray-000 text-gray-800 border border-gray-300 rounded-md shadow-lg">
         {supportedLanguages.map((language) => (
           <Listbox.Option
             key={language.id} value={language}
