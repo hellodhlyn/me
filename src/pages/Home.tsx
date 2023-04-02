@@ -82,7 +82,7 @@ export function Home() {
           <div className="container mx-auto px-4 md:px-6">
             {resumeHtml ? (
               <div
-                className="prose max-w-none prose-md md:prose-lg md:prose-h1:text-4xl prose-h1:my-0 prose-h1:pt-12 prose-ul:mt-0 prose-li:my-0"
+                className="prose max-w-none prose-md md:prose-lg md:prose-h1:text-4xl prose-h1:my-0 prose-h1:pt-12  md:prose-li:my-2 prose-li:my-0"
                 dangerouslySetInnerHTML={{ __html: resumeHtml }}
               />
             ) : (
