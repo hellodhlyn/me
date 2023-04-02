@@ -1,6 +1,6 @@
+import { useState } from "react";
 import { Listbox } from "@headlessui/react";
 import { LanguageIcon } from "@heroicons/react/24/solid";
-import { useEffect, useState } from "react";
 
 const supportedLanguages = [
   { id: "ko", name: "한국어" },
@@ -18,12 +18,11 @@ export function LanguageSelector({ initialLanguage, onSelect }: LanguageSelector
     supportedLanguages.find((lang) => lang.id === initialLanguage) || supportedLanguages[0]
   );
 
-  useEffect(() => {
-    onSelect(currentLanguage.id);
-  }, [currentLanguage, onSelect]);
-
   return (
-    <Listbox value={currentLanguage} onChange={setCurrentLanguage}>
+    <Listbox
+      value={currentLanguage}
+      onChange={(lang) => { setCurrentLanguage(lang); onSelect(lang.id); }}
+    >
       <Listbox.Button className="flex items-center px-4 py-2 text-base bg-gray-000 text-gray-800 border border-gray-300 rounded-md hover:opacity-50 transition cursor-pointer shadow-lg">
         <LanguageIcon className="h-4 w-4 mr-1" />
         <span>{currentLanguage.name}</span>
